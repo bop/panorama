@@ -1,0 +1,107 @@
+\documentclass[a4paper,12pt,openright]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{url}
+\usepackage{fourier}
+\usepackage{fourier-orns}
+\usepackage{verse}
+\usepackage{lettrine}
+\usepackage{graphics}
+\usepackage[print]{pdfscreen}
+
+\hypersetup{
+  pdfwindowui=true, pdfnewwindow=true,
+  colorlinks=true, pdfmenubar=true, pdffitwindow=true,
+  anchorcolor=bleu, urlcolor=bleu,
+}
+
+\newif\ifnoDOCinstall
+\newif\ifnoFINALS
+
+\textwidth=152mm
+\textheight=240mm
+\voffset -1in
+%\hoffset 0in%-1in
+\oddsidemargin=11mm
+\evensidemargin=11mm
+\topmargin=1.0cm
+\footskip=1.3cm
+\renewcommand{\ttdefault}{cmtt}
+\hypersetup{
+pdftitle={Une Étincelle},
+pdfauthor={Baptiste Ossipow},
+pdfcreator={LaTeX},
+pdfsubject={Poésie de langue française},
+pdfkeywords={Poésie},
+}
+
+\usepackage[frenchle]{babel}
+
+%\makeindex
+\begin{document}
+
+\definecolor{lightblue}{rgb}{.2,.5,1}
+\newcommand{\lb}[1]{\color{lightblue} #1}
+
+  \definecolor{section1}{rgb}{.2,.5,1}%{.650,.350, 0  }%{.937,.561,.123}
+  \definecolor{bleu}{rgb}{.0,.0,.650}
+  \newcommand{\bleu}[1]{\color{bleu} #1}
+
+% Page de titre :
+\pagestyle{empty}
+\title{\hbox{}
+       \huge\bf
+       \textit{Poésie}       
+\\
+  {\bleu Panorama}
+  \\ 
+\pdfauthor{\bf{ Baptiste Ossipow}}
+       }
+\date{}
+\maketitle
+\begin{verse}
+\settowidth{\versewidth}{de nouveau de nous}
+%\poemtitle{\bleu {Panorama}}
+\vspace{1cm}
+\section{}
+\vspace{1cm}
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{i}}{\space ndicible} point du i}\\
+baume sur les blessures\\
+venez Psaumes résonnez\\
+cors de miséricorde\\
+hardiment en ondes audibles
+
+
+\vspace{2cm}
+\begin{center}
+% \LARGE{\aldineleft}
+\end{center}
+
+
+
+\end{verse}
+
+
+
+%\appendix
+
+
+\vfill
+
+
+%\tableofcontents
+
+%\\pagestyle{empty}
+
+\begin{center}
+\baselineskip=60pt 
+
+\vspace*{12.5cm}
+Réalisé avec \LaTeX
+\\
+\vspace*{1.5cm}
+{\lb \LARGE \textcircled {bo}}
+% Visitez notre site Internet: \url{www.poetic.ch}
+\end{center}
+\end{document}
