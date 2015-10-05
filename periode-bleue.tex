@@ -1,0 +1,920 @@
+\documentclass[a4paper, titlepage, twoside, 12pt]{book}
+
+% Options possibles : 10pt, 11pt, 12pt (taille de la fonte)
+%                     oneside, twoside (recto simple, recto-verso)
+%                     draft, final (stade de développement)
+%                     titlepage, notitlepage
+%
+
+\usepackage[babel,french=guillemets*]{csquotes}
+%\MakeOuterQuote{``}
+\frenchspacing
+\usepackage[T1]{fontenc}      % Police contenant les caractères français
+
+% bop => options perso
+%
+%%%%% épigraphe (poem's dedication)
+%%%%%
+
+\newcommand{\epigraph}[1]{\nopagebreak\afterpoemtitleskip\begin{epigraphquote}
+\emph{#1}\end{epigraphquote}\afterpoemtitleskip\nopagebreak}
+\newcommand{\headnote}[1]{\epigraph{#1}}
+\newcommand{\attribution}[1]{\nopagebreak\afterpoemtitleskip\begin{epigraphquote}
+{\small\emph{#1}}\end{epigraphquote}\afterpoemtitleskip\nopagebreak}
+\newcommand{\poemdedication}[1]{\nopagebreak\afterpoemtitleskip\begin{epigraphquote}
+\emph{#1}\end{epigraphquote}\afterpoemtitleskip\nopagebreak}
+\providecommand{\dedication}[1]{\poemdedication{#1}}
+\newcommand{\volumededication}[1]{\par\bigskip\begin{volumetitlepagequote}
+\emph{#1}\end{volumetitlepagequote}}
+\newcommand{\volumeepigraph}[1]{\par\bigskip\begin{volumetitlepagequote}
+\emph{#1}\end{volumetitlepagequote}}
+
+\usepackage[francais]{layout}
+
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{fourier}
+\usepackage{fourier-orns}
+%\usepackage{kyril}
+\usepackage{palatino, lettrine}
+\usepackage{pdfpages}
+\usepackage{verse}
+\usepackage{url}
+\usepackage{utopia}
+\usepackage{aeguill}	% guillemets et ligatures francisés
+%---PACKAGES-------------------------------------------------------------------
+
+\usepackage{fancyhdr}
+
+\cfoot{Page \thepage}
+%\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{a4wide}
+\usepackage[french]{minitoc}
+\usepackage[hmargin=4cm,vmargin=3cm]{geometry}
+\usepackage[frenchle]{babel}  % Placez ici une liste de langues, la
+                              % dernière étant la langue principale
+
+\pagestyle{plain}        % Pour mettre des entêtes avec les titres
+                             % des sections en haut de page
+
+%définition de la page de titre
+ \makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\vfill
+\vspace{1cm}
+\includegraphics[width=12cm]{klee.jpg}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\huge \@title
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\usefont{OT1}{phv}{m}{n}
+\Large \@author
+\par
+\end{flushright}
+\vspace{1cm}
+\vfill
+\vfill
+\bas{}{\@location}{}
+}%              
+\cleardoublepage
+}
+
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{www.poetic.ch}\blurb{}
+\makeatother
+\title{ch\^ome }
+\author{Baptiste Ossipow}
+\location{www.poetic.ch}
+\blurb{%
+Po\&sie
+}% 
+                    % jour de compilation est utilisée en son
+			      % absence
+   %fin de la déf. de la page de titre
+%\usepackage[frenchle]{babel}
+\begin{document}
+\maketitle                  % Faire un titre utilisant les données
+                              % passées à \title, \author et \date
+
+%\frontmatter                  % Prologue
+
+\chapter*{chôme}
+\newpage
+%\mainmatter                   % On passe aux choses sérieuses
+\pagestyle{plain}
+
+\settowidth{\versewidth}{recouvert de poussière industrielle}
+\poemtitle{La période bleue }
+\begin{center}
+\hspace*{5cm}
+\textsl{pour Natasha}
+\end{center}
+%\poemdedication{à Nat}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{S}}{\space ur la ville} souffle coupé le vent}\\
+de la poussière industrielle\\
+un cheval apparaît la beauté sauvage\\
+indomptée la crinière épiphanique\\
+à l'affût de l'écoute\\
+certains liens vont se nouer\\
+des angoisses qui l'enserraient\\
+à brasser l'air des milliers d'heures\\
+l'âme est voyageuse pourtant\\
+en marche d'ailleurs reconnue enfin\\
+l'excursion sainte d'un atelier\\
+apportant l'indispensable oxygène\\
+puisque demeurer ici est impossible\\
+entre l'appel et l'élection
+
+\subsection*{}
+mendiant leur argent pour manger\\
+l'infirme devant le supermarché\\
+en souffrir inouï sous l'offense\\
+silhouettes à l'arrêt quand le soir\\
+ils sont livrés à leur propre cupidité\\
+sa gravité reprend une ombre\\
+devenir furtive la énumération\\
+peut-être les villes éloignent à jamais\\
+de l'avoir vu là-bas\\
+avoir lu dans le livre\\
+que le montent à cru\\
+ceux qui croient\\
+ce serait une chevauchée\\
+royale anachronique
+
+
+\subsection*{}
+les travailleurs se sont éteints\\
+l'argent rugit\\
+la rue est rouge\\
+presque pourpre\\
+l'alcool efface et coule\\
+les moteurs retournent à l'inertie\\
+dans le silence qui fascine\\
+la rue est noire et l'ombre bleue\\
+des enfants qui s'endorment\\
+sur la mantille agenouillée\\
+d'une vielle borgne\\
+d'une provenance intouchable\\
+une s\oe ur en guenilles\\
+pour un peintre pose\\
+son châle avec pudeur
+
+\subsection*{}
+l'inscription il est coupable\\
+il doit l'être coupé à la racine\\
+tranché de la cité\\
+la ville où des noms à l'esprit s'ajoutent\\
+l'opprobre ne subsiste aucune issue prescrite\\
+dont on équerre les songes improductifs\\
+mais partout éclaircir de certitudes froides\\
+en bercer jusqu'à la fin tout se taise\\
+derrière une lanière de peupliers\\
+le non retour une barrière\\
+un étalon se dresse\\
+où les mots manquent disparaître
+
+\subsection*{}
+mais l'animal chétif veut vivre\\
+inatteignable salve\\
+frôler la peau dans son sommeil\\
+touché la peur partir\\
+au matin de l'exil\\
+des chevaux paissent libres\\
+sur le sol des sabots exaucent\\
+au galop des rêves dansés\\ 
+le souffle  des naseaux transporte\\
+les muscles saillants des robes équestres\\
+à son comble l'effroi\\
+remis à l'éblouissement poétique\\ 
+préservé dans l'attente\\
+de la beauté du monde
+
+\subsection*{}
+sur la jetée de la nuit\\
+le déferlement des villes entendent\\
+transformé par l'écho\\
+du mont descend le dict\\
+humble est la puissance qui \oe uvre dans la lettre\\
+la parabole créatrice\\
+la parole donnée aux offensés\\
+qui confiants remettent\\
+à la grâce crucifiée du Christ\\
+l'écoute lui prodigue\\
+la langue retrouvée du temps\\
+de la volupté où la horde chôme\\
+si la splendeur se distancie\\
+des mots d'amours qui l'ont reprise
+
+\subsection*{}
+de bas néons tamisent les ruelles\\
+les flaques brillent le feu des huiles\\
+les bras de verre se font enjôleurs\\
+bouge l'immersion hallucinée sa fougue\\
+des milliers d'un soir réconforte une amie\\
+dans l'alcool oublie avoir combattu\\
+un cheval dans l'azur où tout est destinal\\
+de l'aube poignent les lueurs amniotiques\\
+au lac des ablutions lavent le matin\\
+à la terrasse d'un café encor ébahi\\
+les passants par Pentecôte délivrés semblent\\
+prolonger les discussions dans la cuisine\\
+au visage de la faiblesse est apportée\\
+la mémoire par cette eau vivifiée 
+
+\subsection*{}
+la puissance la volonté au jour données\\
+l'énergie dans les entrailles préparatrices\\
+cisèle attentive la dentelle sonore\\
+mais la venue est certaine comme l'aurore\\
+entretient les pimprenelles épineuses\\
+devant la pensée l'animal avance\\
+le col abaissé que tu puisses monter\\
+sur la steppe acméiste enivrée d'espoir\\
+sans bride en l'air portée\\
+par la liberté d'aller où tu veux\\
+laissant accomplir sa médiation\\
+la langue dans son rapport conjugal\\
+avec ce qui n'est pas
+
+
+\end{verse}
+
+
+\newpage
+
+
+\settowidth{\versewidth}{dans le folklore un temps gardé en mémoire}
+\poemtitle{Tomber}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{M}}{\space ouvement}} dans ta langue\\
+rassemble à la mesure de la perte gravie\\
+béance courageuse d'enjamber le nant\\
+des orages reçoit l'Avançon ravissante\\
+à l'âme humaine bien des choses le sont\\
+déjà par leur précipitation disparaissent\\
+dans le folklore un temps gardé en mémoire\\
+des villages alentour à l'impact de foudre
+
+\subsection*{}
+les différenciations qui t'abaissèrent\\
+voilà celles de hisser ton ascension\\
+tu vois et l'étendue aussi qui nous attend\\
+connaissance ces lois qui prennent soins des mots\\
+inscrite la confiance en langue française\\
+d'après l'émotion d'amour l'intellection\\
+impérissable déjà l'entrevue éclore\\
+mais dessous la croix pourtant les gammes d'étoiles\\
+dans la démarche tonse sous les quolibets\\
+porter la désolation libres rien être\\
+pour magnifier la distance du retour\\
+pour perdre le péril nous avons accompli\\
+pour en prendre la mesure les conséquences\\
+le désaveu dans la catastrophe nazie 
+
+\end{verse}
+
+\newpage
+
+%\pagestyle{fancy}
+\vspace*{2cm}
+\settowidth{\versewidth}{que la terre accueille à ce qu'elle accorde}
+\poemtitle{Hölderlin}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{\OE}}{\space uvre l'inconnue}} d'accueillir chez soi\\
+vers l'indomptable langue matinale\\
+la compréhension offerte porte du feu\\
+où viennent les enfants habiter de leurs chants\\
+dans son incalculable bonté la dire\\
+ainsi c'est une telle célébration qui l'honore\\
+les paroles du ch\oe ur que la mort\\
+comme au bord du fleuve un promeneur\\
+trouve du réconfort lorsque vient le soir\\
+le vin d'or se laisse boire au flanc du jeune coteau\\
+fruit du travail élevé à la célébration\\
+la terre accorde à ce qu'elle accueille\\
+la préséance saisonnière aux fruits de l'équité\\
+où parviennent ça et là les roses\\
+qui échappèrent à la logique sacrificielle\\
+des éclairs grecs dans le minutieux dialecte\\
+l'éclosion préservée pour la langue de l'adhérence\\
+s'ils partaient dans les mythes traduisaient en science\\
+l'art voyage respectueux la beauté à distance\\
+assembler dans les rues encor joyeuses de Tübingen\\
+qu'au retour de Gironde il soit gardé la mémoire\\
+à Francfort Suzette qu'il aimait s'est éteinte\\
+dans les chants en commun de l'hospitalité pensive\\
+\end{verse}
+\subsection*{}
+\settowidth{\versewidth}{que tout soit comme les foins}
+%\poemtitle{ }
+\begin{verse}[\versewidth]
+une danse russe importe\\
+à la fenaison venue\\
+l'ouvrage est fait d'attention\\
+mise au labeur de l'exil\\
+que tout soit comme les foins\\
+aux émondements vouloir\\
+les folioles du trèfle\\
+des constellations qu'embrasse\\
+l'alpe du pays d'en-haut\\
+l'aliénation muselée\\
+sitôt l'oublieuse foudre\\
+déjà en Grèce l'esprit\\
+est l'art que sa trace inscrit\\
+en traversant ses ténèbres\\
+le noir Christ des lumières\\
+au-dessus de la charpente\\
+le panorama autour\\
+de la nature amoureuse\\
+l'écoulement de l'eau du fleuve\\
+l'effluve printanière\\
+dialogue dans la chambre\\
+l'image des ciels futurs\\
+des escaliers le Neckar\\
+le destin des arabesques\\
+de fumée est disparaître\\
+sans considération\\
+au matin de chaque jour\\
+l'indécision séminale\\
+des antiques retrouvailles\\
+nous réserve des soleils\\
+aux ravages infinis\\
+dans une Allemagne cubiste\\
+la culmination globale\\
+un psaume pour le réveil\\
+le corps déclame un poème\\
+au matin de chaque jour
+\end{verse}
+
+
+\newpage
+
+\vspace*{2cm}
+\settowidth{\versewidth}{la toile sur la résurrection lever}
+\poemtitle{Roublev}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{D}}{\space es plaines sémitiques}} au nord de l'Afrique
+
+la toile sur la résurrection lever\\
+l'enfant diaphane dans les bras magnifiques\\
+le sang coule la neige enrobant l'alentour\\
+pour que j'ose te déranger par des prières\\
+sous l'indistincte violence de la guerre\\
+menée contre la liberté de notre foi\\
+qu'avec nous le dieu des origines dialogue\\
+il est écrit dans les livres de la Torah\\
+le cancer de la peur qui dévore nos villes\\
+et les folles dîme qui les rendent exsangues\\
+ils firent à Ghomore ils font aux étrangers\\
+puissiez-vous contempler l'icône de Roublev\\
+sous le chêne lointain de la visitation\\
+où l'ange du retour rédempte le fauteur 
+\end{verse}
+\newpage
+
+
+\vspace*{2cm}
+\settowidth{\versewidth}{les épaules lourdes corrections de la nuque}
+\poemtitle{Djihad}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{O}}{\space raisons d'architecture}}  la passion\\
+les épaules lourdes corrections de la nuque\\
+aux piloris portugais des amitiés\\
+sans pitié septembre déjà pointe son nez\\
+quoi qu'en disent Genevois c'est un bel été\\
+nous asservir sous la propagande assénée\\
+par les vertus ondoyantes de l'air vibré\\
+interrompt ajustés en silence exorbitant\\
+à Salamanque l'obscurité de la nuit\\
+les exilés juifs de ton vocabulaire\\
+pour le chant de grâce monte parfois le soir\\
+de l'affliction côtoyée la permanence 
+\end{verse}
+
+\newpage
+
+
+\vspace*{2cm}
+\settowidth{\versewidth}{que ces chemins menent quelque part}
+\poemtitle{Chemins qui mènent quelque part}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{I}}{\space mpasse}} des lieux retrouvés\\
+le penseur étoilé quitter la Lituanie\\
+dérive prise dans la litanie de glace\\
+impasse aussi des lieux fuis
+\subsection*{}
+si l'information s'automatise\\
+les boulons des machines on doit resserrer\\
+à vélo le matin je fends l'air vers l'usine\\
+l'uniforme imposé sur la peau\\
+\subsection*{}
+si tôt le matin nous empruntons ces chemins\\
+ce serait comme la permanence affectueuse\\
+aux ailes d'une impression endurée\\
+que ces chemins mènent quelque part
+\end{verse}
+
+
+\newpage
+\vspace*{2cm}
+\settowidth{\versewidth}{éclore en nous l'effroi de ne pas encore être}
+\poemtitle{Gen 2.15}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{L}}{\space a parole donne}}  irruption confiante\\
+notre immigration dans le jeu du langage\\
+lorsque l'année s'achève autour du corps souffrant\\
+que vient son étonnante résurrection\\
+éclore en nous l'effroi de ne pas encore être\\
+accomplissant sans adhérence dévaster\\
+tandis que tout autre devoir en résistance\\
+partage l'étendue insurrectionnelle\\
+à l'avant du chant dans les flots messianiques\\
+l'heure où nous boirons à la source poétique\\
+prodiguant l'énergie atomiques fissions\\
+à l'effacement seul la trace que subsiste\\
+établir le droit qui assure la justice\\
+leur affranchissement aux offensés remettent\\
+le vent des hauteurs infirmées de la douleur\\
+est tombé j'en témoigne sur l'adoration\\
+l'acquiescement au dessein de leur dieu\\
+les ravages subir tout le jour en son nom\\
+sans imposition ils ont choisi le souffle\\
+dans le soigneux argile du corps son haleine\\
+"\emph{pour le servir et le garder}" dit le Livre 
+\end{verse}
+
+\newpage
+\vspace*{2cm}
+\settowidth{\versewidth}{la dissipation les brumes aveugles de quelle nuit}
+\poemtitle{À la Nuit}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{A}}{\space près}} l'effroi\\
+survenue dans l'abaissement\\
+la dissipation les brumes aveugles de quelle nuit\\
+où elle nous a conduits\\
+des égarements philosophiques complices\\
+après ça\\
+la lente dissipation partage\\
+retenue à la blême chevelure du temps\\
+à la noire rémanence des illuminations\\
+mutique Nuit\\
+couverte de crimes sans châtiment\\
+recouvrant l'agonie de consciencieux silences\\
+le fardeau déporté des crimes d'état\\
+la science mise au service des meurtriers\\
+où s'élèvent les fumées sacrificielles\\
+dans le ciel blanc d'un été sans soleil\\
+au nom des lois raciales qu'elle invente\\
+ceux qui échappent sont conduits aux frontières\\
+des enfants leur père les suggère au suicide\\
+sont remis en fait à la liberté de leur dieu\\
+l'insurrection cubiste radicalité\\
+sous les coupes sociales des mantes officient\\
+prennent ensuite grand soin de leur victime\\
+quotidiennement foulée se côtoient\\
+marcher sur la tête de l'\'Etranger\\
+ai-je souhaité que en corps tu fusses là
+\section*{}
+ne croyant désormais plus en rien\\
+l'inquiétude devant tout ce qui vient\\
+conjurée à perte de vue\\
+transhumance glaciale\\
+que prennent des formes insensées de nous\\
+nous abaissons aux accoutumances des drogues\\
+des lotus l'âme et le corps scinde léthargie\\
+passer le cap l'alcool et les calmants\\
+le bourdonnement du silence oppression dessaisir\\
+nous maintenant\\
+notre main tenant\\
+de la retenue l'appel\\
+recevoir l'expiation pour le détenu\\
+qui m'avait trouvé pourpre de honte esquisser\\
+maladresse incommensurable l'historique fresque\\
+flèche inversée sur la croix du clocher descendent\\
+avec le seigneur des agapes bénissantes\\
+des mouvements délivrés prennent corps du matin\\
+requérant avant la cadence laborieuse\\
+dans l'allée les  néons le samedi chez Aldi\\
+l'étal déroule la sommation d'acheter\\
+les enseignes du remboursement prédominent\\
+la sélection productive impitoyable\\
+ses critères sont mêmes qui menaient au pire\\
+--- mais bien sûr ceci rentre en ligne de compte\\
+le diable aimerait que nous aussi --- enfin bref\\
+table conviviale faire\\
+fendre la foule hilare de la rue du calvaire\\
+quête éthique pour après le capitalisme\\  
+quand du doute sonne l'heure\\
+il reste la langue dans laquelle je pense\\
+qui est avec nous\\
+dans laquelle joue\\
+une autre logique\\
+l'épître de Jean\\
+tire les leçons d'amour\\
+Augustin dit qu'il autorise tout\\
+en restituer la terre\\
+où tout n'est pas cupide\\
+parfois nous allions\\
+en musique à l'usine\\
+des vieilleries aux dernières mélodies\\
+et nous allons\\
+contre l'autre nos corps\\
+à ton inattendue saveur\\
+sous les dépaysements te transporte\\
+un silence dans le vide\\
+troué de nous\\
+selon la grâce incarnée\\
+sur tes lèvres un soir de juin ne se dérobent\\
+c'est le bonheur à deux un moment de folie\\
+dès lors l'un pour l'autre de loin l'évoquer\\
+les coups bas du sort ni les ans n'effacent\\
+icône ouverte vue d'autres analogies\\
+la souterraine porosité un film dépose\\
+tes traces ne se décelaient pas d'alentours\\
+la plaine au crépuscule baigne sa lueur\\
+la clameur continue prodigieuse dépense\\
+l'énergie à peine extraite son déferlement\\
+des certitudes s'évidant en éclats volent\\
+si le mutisme est lié au déracinement\\
+le fleuve découle alors d'une analogie \\
+avec la conscience Danaé chevauchée \\
+des stalagmites croissance recueillie\\
+la foi transfigurant le dragon de la crainte\\
+un art des falaises sous une bonne étoile\\
+telle confiance est accordée rémission\\
+la porte les mots le sanctuaire du corps\\
+peinant à l'année la prononciation éclore\\
+des bribes arrachées aux bêtes imposées\\
+qu'à l'écoute de l'inconnu on ne pense\\
+amenée par les propositions de la langue\\
+vivant maintenant à distance migratoire
+\section*{}
+plus clairs tourments du ciel flamand\\
+quand flottent les nappes au vent\\
+la dentelle s'agite des fenêtres\\
+sous une aubade au ras de la chaussée\\
+effacé dans le décors étreinte douleur\\
+dehors le dernier établissement ouvert\\
+l'infirme est chassé sans le gîte ni couverts\\
+survolent les goélands de la plage frises\\
+d'écumes courbe une silhouette pourtant\\
+approche avec faste le verbe du repos\\
+sur les calabères à figues son regard\\
+mais le négatif aussi à l'image de\\
+saveurs du livre autour des mots volés par c\oe ur\\
+ils sont si légers qu'ils naissent l'éternité\\
+pour poser sur des lèvres paroles passagères\\
+unique traversée de permanence inscrite\\
+si libres des vers luisent de l'aube\\
+issus des bonds entre les grappes le soleil\\
+venu sur les terrasses pavées de septembre\\
+l'ombre des toits d'Amsterdam étendue apporte\\
+de la main dépose avec la grâce des fleurs\\
+le refuge longeant les canaux de l'insomnie\\
+la fraîcheur matinale vienne saluer\\
+à moins que ne reçoive l'infirme secours\\ 
+qu'est la miséricorde pour le misérable \\
+l'expiation supportée de nos péchés\\
+l'ouvrage accompli des jours dit dans le secret\\
+sa quotidienne déconsidération\\
+mais l'infirme avancé dans la nuit sans peur\\
+touche le vent désaffecté avec la paume\\
+le nom de chaque étoile connue est Seigneur\\
+bâtir étonnant en Jérusalem un psaume\\
+pour le repos du verbe les bannis rassemble\\
+et les enfants dans des églises qu'on étrangle\\
+dehors les anges aux néons brûlent leurs ailes\\
+couronnement de mort leur missive perdue\\
+redressement silencieux de ce qui est tordu\\
+sans consumer les dévore un étrange zèle\\
+préparer les rubans pour l'arrivée du roi\\
+résonner sa parole inviolée en moi\\
+du refus opposer mendiant une obole\\
+du rêve quadrillé que font les métropoles\\
+les mathématiques prennent vie sur écran\\
+les représentations d'arborescents calculs\\
+en procession fragmentés jusque n'être que\\
+nous les maîtrisions aux ténèbres de l'oubli\\
+mais la toile des femmes chevalet cubisme\\
+l'harmonie la méprise révolte sociale\\
+la cité appentie en face du Christ vit\\
+le dénuement poétique à la radio\\
+plus en récolte là sa générosité\\
+ainsi les mots donnés un sens entre deux seuils\\
+à la pureté de la forme rupture portée\\
+derrière l'angoisse au milieu de la pensée\\
+l'océan librement infini de la langue\\
+nous recueillons les propositions amoureuses\\
+que les étoiles adressent à la Nuit\\
+nous répandons dans le silence une semence\\
+et le chant que notre vie féconde un instant\\
+la sève en esprit adorable au firmament
+
+\end{verse}
+\newpage
+
+\vspace*{2cm}
+\settowidth{\versewidth}{aux pieds des versants rejoints dans le val}
+\poemtitle{Chemins de fer}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{Q}}{\space ue le hall}} de gare est bondé\\
+la file d'attente aux guichets\\
+le train fait son entrée à quai\\
+la masse métallique glisse\\
+les essieux crissent en freinant\\
+les passagers laissent leurs songes\\
+et des journaux sur les banquettes\\
+\subsection*{}
+un flux d'air climatisé me frigorifie\\
+indigne battue la sélection naturelle\\
+livre l'infirme projette sa fin\\
+dans le couloir où nous cherchons salaire\\
+le rail sort de la ville\\
+aux pieds des versants rejoints dans le val\\
+les Voyelles de Rimbaud\\
+\subsection*{}
+le vertige des lettres qu'inonde l'empreinte\\
+sur des pages plus libre ascension du sommet\\
+blancheur surmontée l'attraction de la pente\\
+de les dire est assez aux mots donner la vie\\
+prier pour sous la tente nous mettre à l'abri\\
+autour des choses auxquelles nous pensons\\
+\end{verse}
+
+\newpage
+
+\vspace*{2cm}
+\settowidth{\versewidth}{ou la langue est en dieu}
+\poemtitle*{}
+\addcontentsline{toc}{poemtitle}{ { } La Cité des Poètes
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  }
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{L}}{\space a Cité des poètes}}\\
+où la langue est en dieu\\
+dieu qui nous parlerait\\
+et nous entendrions
+\subsection*{}
+que la mort est vaincue\\
+dans son abaissement\\
+nous combleraient d'amour
+\subsection*{}
+ce n'est pas la coutume\\
+les propositions
+\subsection*{}
+d'une adhérence libre
+
+\end{verse}
+
+\newpage
+
+\vspace*{2cm}
+\settowidth{\versewidth}{comme le jour est long quarante ans dans les déserts}
+\poemtitle{L'Exode}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{J}}{\space uché sur les hauteurs}} arrogantes qui dominent\\
+le présent est une sensation fugace\\
+dans laquelle tout ne vient pas se traduire\\
+ce qui est revêt une telle profondeur\\
+resterait-il une place pour rien d'autre
+\subsection*{}
+comme le jour est long quarante ans dans les déserts\\
+livrés à la quête d'absolu absolue\\
+Moïse choisi de l'horrible angoisse hors\\
+le peuple hébreux mis à l'avant de la mer Rouge\\
+des peuples sortirent pour aller adorer
+\end{verse}
+
+
+\newpage
+
+\vspace*{2cm}
+\settowidth{\versewidth}{cristaux infimes variations de temperature}
+\poemtitle{Une humble présence}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{Q}}{\space uel hiver}} survivre l'état de frénésie\\
+laissant ce qui aurait pu naître\\
+emporté par les filandreuses méduses des rêves\\
+devant l'histoire vaincue la force événementielle\\
+semble ne laisser rien d'autre que des peut-être\\
+mais ne les préférons-nous pas encor\\
+l'amour n'est pas sous la contrainte il est l'attente\\
+de son humble puissance mise en nous\\
+celui à terre pourtant se relève\\
+si les têtes dépassent les coupent\\
+on fait ce qu'on ne veut subir aux enfants\\
+la chasse aux déviants dans la cité idéale\\
+ils se répartissent en petits groupes par quartiers\\
+ce qui prouve bien leur malhonnêteté\\
+légalement la meute se lance à leur trousse\\
+nous consentions à l'horreur perpétuée\\
+on s'acharnera sur ceux qui tombent\\
+par dressage systématique on nous assigne\\
+les plus forts devant dirigent l'espèce\\
+à qui on doit la survie dans l'hostilité\\
+on se prosterne donc également à leurs pieds\\
+quand la servilité s'ajuste au nécessaire\\
+on en ressort abasourdi de violence
+\subsection*{}
+à l'écart les ténèbres ont emparés la nuit\\
+entre le fait et ses possibles résonances\\
+nous errons libres où nous leur devons rien\\
+et libre est l'air autour de ton visage aussi\\
+et avec la parole une forme je lui donne\\
+calmement à l'esprit qui vient dans la langue\\
+mystérieusement approuver la beauté de l'\oe uvre\\
+la justice rendue à l'enfant à l'infirme\\
+comme auprès ceux qui souffrent son humble présence\\
+le seigneur du ciel et de la terre avec nous\\
+si nos mérites certes sont étourdissants\\
+d'ailleurs révèle l'harmonie qui nous dépasse
+\subsection*{}
+il neige\\
+sur la ville\\
+mon poème\\
+blanc linceul sabbatique\\
+affranchissement l'année\\
+cristaux infimes variations de température\\
+l'Europe couverte les montagnes immobiles\\
+descendent des navires sur la mer\\
+sur la matière s'exerce notre pouvoir\\
+mais l'esprit nous pouvons le renier\\
+délier l'inscription demeure dans la langue\\
+confiante colonne de verbe
+\subsection*{}
+don de la foi en un autre\\
+que l'âme a reçu des capacités langagières\\
+acquiescer à la venue initiale\\
+que creuse la présence sans certitude\\
+le refus proposer au néant\\
+exigence joie d'exister\\
+portant les consolations éternelles\\
+au calice de mes lèvres en sang\\
+le soin pris qu'il ne se renverse\\
+les lettres de la tora insuffle l'ange du livre\\
+de tous les livres que tu lis\\
+et que tu reposes comme un trésor en toi
+\subsection*{}
+voici le ravissement dans le psaume des degrés\\
+porté par les vagues de plaisir\\
+qui découvre aux regards des amoureux\\
+entre les branches juvéniles d'un vieux chêne\\
+une blanche colombe saigne abondamment\\
+l'alphabet primordial aussi a une tache rouge\\
+le point d'équilibre des forces fondatrices\\
+que les héritiers de la promesse déplace\\
+pour elle inscrire ainsi sa promesse\\
+le trait des glyphes sur le chemin historique\\
+qu'intégralement soit attesté le règne\\
+du descendant de David en pérennité
+\end{verse}
+
+
+\newpage
+
+\vspace*{2cm}
+\settowidth{\versewidth}{advienne quelque chose d'autre}
+\poemtitle{Chorégraphie}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{C}}{\space ubisme des mots} le temps d'écrire}\\
+comme ils fusent dans le ciel de la pensée\\
+un poème prendre mon corps\\
+en transition incandescente\\
+entre l'énergie fusionnelle\\
+le magma contraint du corps de la terre\\
+et dans l'air l'haleine des voix\\
+éclosent libres et chantent
+\subsubsection*{étude de mouvement}
+prenant vampire non abysse\\
+que tous les possibles épuisent\\
+dans le mot un vers expérimente\\
+au solstice définitif à travers\\
+une rime une association nouvelle\\
+que nous partageons entre les langues\\
+chantées sur le seuil nuptial\\
+la communion des noms\\
+j'ose laisser hisser où\\
+l'écoute silencieuse de la pensée amène\\
+dans les effluves d'une goutte de l'esprit\\
+le calme produit de la permanence éveille\\
+dans la chair tremblante le rire\\
+de jeunes danses s'ensuivirent
+\subsubsection*{fantaisies}
+les premiers trouvèrent\\
+la terre ferme n'en revinrent\\
+les colombes font retour seules
+\subsubsection*{}
+être être présent là\\
+c'est l'évidence même\\
+et la grandeur froide sans doute\\
+des syllogismes de l'antiquité\\
+cependant les choses parfois\\
+ne se passent pas comme prévu\\
+ce qui peut aussi faire rire\\
+advienne quelque chose d'autre
+\subsubsection*{}
+des étoiles la touchent\\
+la peau nue sous la douche\\
+le temps est à l'écoute\\
+et les gouttes de houle\\
+suspendues un instant\\
+un étincellement
+\subsubsection*{}
+le temps recueillement du cycle saisonnier\\
+purifier la langue de la foi\\
+l'émotive diction\\
+et le vent éloquent souffle d'été\\
+l'infime brise du poème
+
+\end{verse}
+
+
+\newpage
+
+
+\vspace*{2cm}
+\settowidth{\versewidth}{qui dessine noir au-dessus les Alpes}
+\poemtitle{Flore}
+\begin{verse}[\versewidth]
+{\lettrine[lines=1]{\textcolor[gray]{0.6}{T}}{\space ension} végétale}\\
+irrépressible poussée\\
+sous la terre mutique du retour\\
+malade dans l'attente Europe\\
+soleil en colonie des langues cultivées\\
+liberté du partage la parole\\
+qui dessine au-dessus les Alpes\\
+des rivages lumineux les mers\\
+les bouquets d'analogies\\
+la participation aux offrandes comprises\\
+partout fleurit de la poésie\\
+l'émotion commune à la racine du nom 
+
+\end{verse}
+
+
+
+\vspace*{1.5cm}
+\begin{center}
+\LARGE{\aldineleft}
+\end{center}  
+
+
+
+
+\newpage
+\tableofcontents            % Table des matières
+\newpage
+\pagestyle{empty}
+
+\begin{center}
+\baselineskip=20pt 
+
+\vspace*{17.5cm}
+Baptiste Ossipow \'Editeur 2012
+\\
+\vspace*{1.5cm}
+\url{www.poetic.ch}
+\\
+\textcircled{bo}
+\end{center}
+% \listoffigures              % Table des figures
+
+% \listoftables               % Liste des tableaux
+
+\newpage
+
+\layout
+
+
+\end{document}

@@ -1,7 +1,6 @@
-\documentclass[a4paper,12pt,openright]{book}
+\documentclass[a4paper,12pt,openright]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{times}
 \usepackage{url}
 \usepackage{fourier}
 \usepackage{fourier-orns}
@@ -10,15 +9,30 @@
 \usepackage{graphics}
 \usepackage[print]{pdfscreen}
 \usepackage{psfont}
-
+\pagestyle{plain}
+\usepackage{aeguill}
+\usepackage{hyperref}
+\usepackage{utopia}
 \hypersetup{
-  pdfwindowui=true, pdfnewwindow=true,
-  colorlinks=true, pdfmenubar=true, pdffitwindow=true,
-  anchorcolor=bleu, urlcolor=bleu,
+  bookmarksopen=true,		 % bookmarks are expanded 
+  pdfpagelayout=SinglePage,
+  pdfpagetransition=Dissolve,	% in full screen view only 
+    unicode=true,          % non-Latin characters in Acrobat bookmarks
+    pdftoolbar=true,        % show Acrobat toolbar?
+    pdfmenubar=true,        % show Acrobat menu? 
+    pdffitwindow=true,      % page fit to window when opened
+    pdftitle={Le Ponit Commun},    % title
+    pdfauthor={Baptiste Ossipow},     % author
+     pdfcreator={LaTeX},
+    pdfsubject={poésie},   % subject of the document
+    pdfnewwindow=true,      % links in new window
+    pdfkeywords={poésie}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
 }
-
-\newif\ifnoDOCinstall
-\newif\ifnoFINALS
 
 \textwidth=152mm
 \textheight=240mm
@@ -29,9 +43,7 @@
 \topmargin=1.0cm
 \footskip=1.3cm
 \renewcommand{\ttdefault}{cmtt}
-
 \usepackage[frenchle]{babel}
-
 %\makeindex
 \begin{document}
 
@@ -43,19 +55,29 @@
   \newcommand{\bleu}[1]{\color{bleu} #1}
 
 % Page de titre :
-\pagestyle{empty}
+\pagestyle{empty}  
 \title{\hbox{}
        \huge\bf
        \textit{Poésie}       
 \\
-  {\bleu Une étincelle}
+  {\bleu Le Point Commun}
   \\ 
-\pdfauthor{\large\bf{ Baptiste Ossipow}}
+\author{\large\bf{ Baptiste Ossipow}}
        }
 \date{}
 \maketitle
+\newpage
+\epigraph{
+  \hspace{5em}
+  \vspace{7cm}
+\\ \textit{``La langue\\
+  comme la terre\\
+  se transmet'' }}\\
+\\
+{Mahmoud Darwich}
+
 \begin{verse}
-\settowidth{\versewidth}{de nouveau de nous}
+\settowidth{\versewidth}{jamais vain creuset d'exil}
 %\poemtitle{\bleu {Une étincelle}}
 \vspace{1cm}
 \chapter*{Le Point Commun}
@@ -69,17 +91,17 @@ l'océan et le ciel
 comme se lève un nouveau jour\\
 qui lance son filet dans la langue\\
 la palette en verre des façades\\
-où la lumière se recueille\\
-pas en vain au creuset d'exil
+recueil de la lumière\\
+jamais vain creuset d'exil
 
+\end{verse}
 \vspace{2cm}
 \begin{center}
-% \LARGE{\aldineleft}
+\LARGE{\aldineleft}
 \end{center}
 
 
 
-\end{verse}
 
 
 
@@ -101,6 +123,6 @@ Réalisé avec \LaTeX
 \\
 \vspace*{1.5cm}
 {\lb \LARGE \textcircled {bo}}
-% Visitez notre site Internet: \url{www.poetic.ch}
+
 \end{center}
 \end{document}
